@@ -1,39 +1,7 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+[{"question":"Instantaneous power of the envelope is an analog. State True/False?","answers":{"a":"True","b":"False"},"correctAnswer":"a"},
+{"question":"In optical communications, intensity modulation (IM) is a form of modulation in which the optical power output of a source is varied in accordance with some characteristic of the","answers":{"a":"Carrier signal","b":"Modulating signal","c":"Both carrier and modulating","d":"None of the above"},"correctAnswer":"b"},
+{"question":"The envelope of the modulated optical signal is an","answers":{"a":"digital","b":"analog","c":"discrete","d":"None of the above"},"correctAnswer":"b"},
+{"question":"Recovery of the modulating signal is usually by?","answers":{"a":"no detection","b":"parallel detection","c":"indirect detection","d":"direct detection"},"correctAnswer":"d"},
+{"question":"The instantaneous power of the envelope is an analog of the characteristic of interest in the modulating signal. State True/False?","answers":{"a":"True","b":"False"},"correctAnswer":"a"}]
+
+
