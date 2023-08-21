@@ -1,0 +1,374 @@
+<html>
+    <head>
+        <title>Reading values</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/expstyle.css">      
+		<!---------MathJax------------------->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!------------calculator----------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+		<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script-->
+        <script src="js/jquery.knob.min.js"></script>
+        <script src="js/exp4knobs.js"></script>
+        <script src="js/exp4axis.js"></script>
+        <script src="js/sinewave.js"></script>
+        <script src="js/exp4.js"></script>
+        <script src="js/exp4both.js"></script>
+        <script src="js/exp4gnd.js"></script>
+        <script src="js/exp4peak.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    
+    <body style="width:95em"> 
+        
+      <div id="se-pre-con">
+        <div class="load">
+		<p>You can read the values of the experiment</p>
+		<img src="images/load.gif"></img>
+		<p>Please wait...</p></div>
+	</div>
+    <script>
+		var t=0;
+			$(window).load(function() {
+			// Animate loader off screen
+			
+				$("#se-pre-con").animate({
+					top: "-200%"
+				}, 4000);t=1;
+			});
+		</script>
+         <div class="wholebody" id="exp">
+            <div id="exph">
+                <h1 id="expm">Intensity Modulation of Laser Output through an Optical Fiber</h1>
+               
+                </div>
+
+                <div class="instruct">
+                    <a id="myBtn" href="#">INSTRUCTIONS</a>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">&times;</span>
+                                    <h2>Instructions</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <center><img src="images/setup.PNG" alt="setup" width="850" height="330"></center>
+                                    <p>
+                                        <ol type="1" style="font-size:20px;">
+                            <li>Click on <b style="color:red">'Power'</b> button to start the experiment.</li>
+                            <li>Double click on <b style="color:#091069">'SineWave'</b> button to generate input waveform.</li>
+                            <li>Click on <b style="color:#091069">'Oscilloscope'</b> button to get the output waveform.</li>
+                            <li>Vary the Amplitude, Frequency, volt/div  using the controllers.</li> 
+                            <li>Click on <b style="color:#091069">'Dual'</b> button to observe both the waveforms.</li>
+                            <li>Channel 1 shows the input sine waveform, Channel 2 shows the output sine waveform. </li>
+                            <li>Click on <b style="color:#091069">'Add'</b> button to read input values into table.</li>
+                            <li>Click on <b style="color:#091069">'PLOT'</b> button to plot the graph from table readings.</li>
+                        </ol>  </p>
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <br>
+                                </div>
+                        </div>
+            </div></div>
+          
+          
+
+ <div id="grpwrap" >
+                
+                <div id="osci"><p style="color:white;display:contents;"> <b> OSCILLOSCOPE</b></p>
+                </div>  
+               
+                    <div class="canvas2d-view" id="canvas2d-view" >
+
+                        <center><canvas id="mycanvas" width="430" height="300">
+                            </canvas>  </center>
+                    </div>
+                  
+                    <div class="lowerleftsection">
+                         
+                        <input type="button" id="chhn1" value="Channel 1" onclick="chnlo()" disabled="true" />
+                        <input type="button" id="chhn2" value="Channel 2" onclick="chnlt()" disabled="true" />
+                        <input type="button" id="grnd" value="Ground" onclick="grnds()" disabled="true"/>
+                        <input type="button" id="dual" value="Dual" onclick="bthd()"  disabled="true"/>
+						<input type="button" id="add" value="Add" onclick="insert()"  disabled="true"/>
+                        <input type="button" id="onff" onclick="mainswt()" value="Power:Off" />
+
+                        <div id="knob-container-fng">
+                            <!------frequency-knob-container------------>
+                            <div id="frequency-knob-container-fng">
+                                <input type="text" id="fq-knob-fng"  value="1000" readOnly=false oninput="freqfng()">
+                                <label>Frequency(Hz)</label>
+                            </div>
+
+                            <!-----------amplitude-knob-container---------------->
+                            <div id="amplitude-knob-container-fng">
+                                <input type="text" id="amp-knob-fng" readOnly=false  value="1" oninput="ampfng()">
+                                <label>Amplitude(Volt)</label>
+                            </div>
+
+                        </div>  <!--------------- end of .knob-container-fng----------------------->
+
+                    </div><!--------------- end of .lowerleftsection----------------------->
+        
+    </div><!--------------- end of .graphSection----------------------->
+            
+                    <div id="circuitsection">
+                        <div id="crtsec"><p style="color:white;display:contents;"> <b> CIRCUIT </b></p></div>
+
+                <div id="circuit">
+                        
+                       <img src ="images/setup.PNG" style="width:98%;height:92%;margin:auto;display: block;" /> 
+                       <figcaption id="figcap">Setup for Intensity Modulation of Laser Output through an Optical Fiber</figcaption> 
+                        <input type="button" id="sinecrv" value="SineWave" disabled onclick="chnlo()" />
+                        <input type="button" id="rectifiedop" value="Oscilloscope" onclick="drawhlfrectifier()" disabled=true/>   
+                      
+                    
+                    </div><!--------------- end of .circuit----------------------->
+                    </div> <!--------------- end of .circuitSection----------------------->
+
+                    <div class="but">
+                        <button class="button" onclick="plot()">PLOT</button>
+                        <button class="button" onclick="window.location.reload()">RESET</button>
+                        <button class="button" id="button1" onclick="printf()">PRINT</button><br>
+                    </div>
+
+ <div id="controller" >
+      <div id="cntrlr"><p style="color:white;display: contents;"><b>CONTROLS</b></p></div>
+               
+                    <div class="middlerightmiddle">
+                        <div id="knob-container-amp">
+                            <!-----------amplitude-knob-container1(volt/div)---------------->
+                           
+                            <div id="amplitude-knob-container1">
+                                <input type="text" id="amp-knob1" value="1" readOnly=false oninput="amp1pdiv()">
+                                <label>Volt(V)/div</label><br>
+                                
+                            </div>
+                             
+                            <!-----------amplitude-knob-container2(volt/div)-------------->
+                            <div id="amplitude-knob-container2">
+                                <input type="text" id="amp-knob2"  value="1" readOnly=false oninput="amp2pdiv()" >
+                                <label>Volt(V)/div</label>
+                            </div>
+                        </div><!--------------- end of .knob-container-amp----------------------->
+
+                        <input type="range" orient="vertical" id="positiony1" min="-2" max="2" value="0"  oninput="posiy1chnge()"  style="cursor:pointer;">  <label id="positnlabely1">Position-Y</label><label id="positnlabelch1">Channel 1</label>
+                        <input type="range" orient="vertical" id="positiony2" min="-2" max="2"  value="0" oninput="posiy2chnge()" style="cursor:pointer;">  <label id="positnlabely2">Position-Y</label><label id="positnlabelch2">Channel 2</label>
+                        <div class="middlerightsectiondivide"></div>
+
+                    </div> <!--------------- end of .middlerightmiddle----------------------->
+                   <div class="middlerightupper">
+                        <input  type="range"  id="positionx" min="-360" max="360" step="90"  value="0" oninput="posix2chnge()"  style="cursor:pointer;">
+                        <label id="positnlabelx">Position-X</label>
+
+                        <!-- -----knob---------- -->
+                        <div id="knob-container">
+                            <!------frequency-knob-container(time(ms)/div)------------>
+                            <div id="frequency-knob-container">
+                                <input type="text" id="fq-knob"  value="0.1"  readOnly=false oninput="timepdiv()">
+                                <label>Time(ms)/div</label>
+                            </div>
+                        </div><!--------------- end of .knob-container----------------------->
+
+                    </div> <!--------------- end of .middlerightupper--------------------->
+                </div>  <!--------------- end of .controllSection----------------------->
+                <!--------------- end of .calcln----------------------->
+                
+				<div class="calc">
+			<table  cellpadding="5" border="2px solid black" id="table">
+				<tr style="color:white;background-color:#19318F;height:25px;"><th colspan=4>EXPERIMENTAL READINGS</th></tr>
+				<tr bgcolor="#ffffff" class="font">
+					<th align=center>Sl.No</th>
+					<th align=center>V<sub>in</sub> (V)</th>
+					<th align=center>V<sub>o</sub> (V)</th>
+					<th align=center>Gain (dB)</th>
+				</tr>
+			</table>
+			</div>
+
+          
+
+			<div class="graph">
+				
+				<table border="2 solid black" id="graph">
+					<tr  style="color:white;background-color:#19318F;height:25px;font-size: 20px;font-weight: bold;"><td align="center" class="font">GRAPH</td></tr>
+					<tr><td bgcolor='#ffffff'><canvas id="canvas" width=525 height=390></canvas></td></tr>
+				</table>
+		</div>
+		
+        </div><!--------------- end of .wholebody----------------------->
+   
+       <script>
+		
+			var i=2;
+			var count=1;
+			var l1=[];
+			var l2=[];
+			function plot() {
+			var bttn = document.getElementById('onff').value;
+            let chartStatus = Chart.getChart("canvas"); 
+                            if (chartStatus != undefined) {
+                              chartStatus.destroy();
+							 
+                            }
+			if (bttn == "Power:Off") {
+                Swal.fire({
+                backdrop:false,
+               target: '#exp',
+               position:'center',
+               
+                customClass: {
+                  container: 'position-absolute',
+                  popup:"swal2-popup"
+                },
+                title:'POWER is OFF!!!',
+                html: 'Could not plot if power is off.<br>To plot the graph please follow the <b style="color:#091069">INSTRUCTIONS</b>.',
+               icon:'warning'
+                });}
+				else{
+                    document.getElementById("add").disabled=true;
+				var ctx=document.getElementById("canvas").getContext('2d');
+				var len1=l1.length;
+				
+				for(var i=0;i<len1;i++) {
+					for(var j=i+1;j<len1;j++) {
+						if(parseFloat(l1[i])>parseFloat(l1[j])) {
+							var temp=l1[i];
+							l1[i]=l1[j];
+							l1[j]=temp;
+							temp=l2[i];
+							l2[i]=l2[j];
+							l2[j]=temp;
+						}
+					}
+				}
+				var chart=new Chart(ctx,{
+								type:'line',
+								data: {
+									labels:l1,
+									datasets:[{
+										label:"Input Voltage vs Output Voltage",
+										borderColor:'#000000',
+										data:l1,
+                                        pointBorderColor: 'blue',
+									}]
+								},
+                                options: {
+									responsive:true,
+									
+                                         scales: {
+                                              x: {
+                                                title: {
+                                                color: 'red',
+												text: 'Output Voltage (V)',
+                                                display: true,
+												align:'center',
+												font: {
+                                                    size: 18,
+													family:"'Times New Roman'",				
+                                                 },
+                                                },
+												
+                                             },
+											 y: {
+                                                title: {
+                                                color: 'red',
+												text: 'Input Voltage(V)',
+                                                display: true,
+												align:'center',
+												font: {
+                                                    size: 18,
+													family:"'Times New Roman'",
+                                                 },
+                                                },
+												
+                                             }
+                                    }
+								}
+							});
+			}}
+			function insert() {
+				var x=parseFloat(document.getElementById("amp-knob-fng").value).toFixed(2);
+				var tab=document.getElementById("table");
+					if(count>8) 
+                    {
+                        Swal.fire({
+                backdrop:false,
+               target: '#exp',
+               position:'center',
+               width:550,
+                customClass: {
+                  container: 'position-absolute',
+                  popup:"swal2-popup"
+                },
+                title:'Oops...',
+                html: 'You cannot read more values. Now click on <b style="color:#091069">PLOT</b> button.',
+               icon:'info'
+                });
+                        stop();
+                    }
+					else {
+						var row=tab.insertRow(i);
+						row.id=i++;
+						row.setAttribute("bgcolor","#ffffff");
+						row.setAttribute("align","center");
+						var cell1=row.insertCell(0);
+						var cell2=row.insertCell(1);
+						var cell3=row.insertCell(2);
+						var cell4=row.insertCell(3);
+						cell1.innerHTML=count++;
+						cell2.innerHTML=x;
+						var y=parseFloat(x)+parseFloat(x*0.01);
+						cell3.innerHTML=x;
+						cell4.innerHTML=(x/x);
+						l1.push(x);
+						l2.push(x);
+					}	
+			}
+			function printf() {
+				if(t) document.getElementById("se-pre-con").remove();
+				t=0;
+				window.print();
+			}
+			
+			
+		</script>
+         <script>
+            var modal = document.getElementById("myModal");
+    
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+    
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+    
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+    
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                        modal.style.display = "none";
+                }
+            }
+        </script>
+        	<footer class="main-footer">
+                <div align="center" style="font-size: 16px;color:white;margin:auto">&copy; 2023 Virtual Labs, IIT Roorkee</div>
+              </footer>
+    </body>
+</html>

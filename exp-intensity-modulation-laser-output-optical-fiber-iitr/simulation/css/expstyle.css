@@ -1,0 +1,561 @@
+
+
+body,html {margin:0;height:59em; padding:0;}
+.clearfix { clear:both; }
+.wholebody {
+    width: 83em;
+    height: 58.5em;
+    background-color: white;
+    position: absolute;
+    top: 0em;
+    left:0em;
+    border: 5px;
+    border-style: groove;
+}
+.position-absolute {
+    
+    position: absolute !important;
+    backdrop-filter: blur(6px);
+
+  }
+  .swal2-popup {
+    font-size: 1rem !important;
+    font-family: Georgia, serif;
+  }
+ 
+  #exph{
+	margin-top: -2px;
+	margin-left: -3px;
+   padding-left: 20px;
+   width: 82em;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   background-image: linear-gradient(#091069,#2B4D9D );
+	box-shadow: 0 8px 6px -6px black;
+  }
+  #expm{
+	font-size: 25px;
+	color: white;
+	text-align: center;
+  }
+
+#se-pre-con {
+		position: fixed;
+		left: 0px;
+		background-color:white;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		text-align:center;
+	} 
+	.load{
+		top: 50%;
+    position: absolute;
+	font-family:cursive;
+	font-size:1.3em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#circuitsection {
+    position: absolute;
+    border: 2px solid #19318F;
+    top: 80px;
+    width: 808px;
+    height: 345px;
+    left: 31em;
+}
+
+#crtsec{
+    position:absolute; font-size:20px; top:0px;right:0px;  height:25px;background-color:#19318F;
+    width:808px;font-weight: bold;text-align: center;
+}
+             
+             #circuit{
+                 
+                 position:absolute; top:30px;left:0px; height:310px; width:805px;
+             }
+         #figcap{
+                    text-align: center;font-size: 16px;font-weight: bold;position:absolute;top:290px;width:808;color:red;
+              }
+             .instruct{
+                position:relative;
+                margin-left: 87%;
+                margin-top:-3%;	
+            }
+            #myBtn{
+                color:white;
+                    font-weight: bold;
+                    font-size: 18px;
+            }
+
+            .modal {
+                display: none;
+		position: inherit;
+		z-index: 11;
+        padding-top: 150px;
+		left: -1156px;
+		top: -45px;
+		width:83em;
+		height:50.5em;
+		background-color: rgba(255, 255, 255, 0);
+        backdrop-filter:  blur(9.2px);
+       -webkit-backdrop-filter: blur(9.2px);
+        border: 1px solid rgba(255, 255, 255, 0.99);
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 65%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+            }
+            @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0} 
+                to {top:0; opacity:1}
+            }
+            @keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
+            .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .modal-header {
+                padding: 2px 16px;
+                background-color: #2B4D9D;
+                color: white;
+            }
+            .modal-body {padding: 2px 16px;}
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: #2B4D9D;
+                color: white;
+            }
+.calc{
+		position:absolute;
+		right:21px;
+		top:30.5em;
+	}
+.graph {
+    width: 33.5em;
+    height: 27.2em;
+    position: absolute;
+    top: 30.5em;
+    left: 31em;
+}
+	
+.middlerightupper{
+        position: relative;
+    top: 25px;
+    width: 455px;
+    height: 120px;
+    border: 1px solid black;
+}
+.middlerightsectiondivide{
+    position:relative;
+    left:225px;
+    top:0px;
+    width:3px;
+    height:160px;
+    border:1px solid black;
+  
+}
+.middlerightmiddle{
+    position: relative;
+    top: 25px;
+    width: 455px;
+    height: 162px;
+    border: 1px solid black;
+}
+
+.lowerleftsection{
+    position:relative;
+    margin:0 auto;
+    top:5px;
+    width:430px;
+    height:160px;
+    border:1px solid black; 
+}
+
+
+/*-----------------------------------------------------canvas-css---------------------------------------*/
+/*.canvas2d-view{
+    margin:0 auto;
+    width:250px;
+    margin-top:40px;
+    height:250px;
+    border:1px solid red;
+} */
+#mycanvas{
+    color:#0000FF;
+    margin-top:30px;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color:#ffffff;
+    border:1px solid black;
+}
+/*---------------------------------------------------button css--------------------------------------------*/
+.but{
+    top:28em;
+    left:31em;
+    position: absolute;
+    display:flex;
+    width:50.5em;
+}
+button{
+ 
+    width: 100px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.button {
+
+    margin:auto;
+    display:inline-block;
+    border: 2px #2B4D9D solid;
+    background-image: linear-gradient(#95ABD0,#2B4D9D,#091069 );
+}
+.button:hover{
+ 
+    color: #2B4D9D;
+background: white;
+cursor:pointer;
+}
+input[type=button]{
+    width:75px;
+    cursor: pointer;
+    border: 2px #091069 solid;
+    background-color: white;
+    color:#000;
+}
+input[type=button]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+#sinecrv{
+    position:absolute;
+    top:80px;
+    left:20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px #2B4D9D;
+}
+#rectifiedop
+{
+    position:absolute;
+    width:90px;
+    right:10px;
+    top:76px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px #2B4D9D;
+}
+#onff
+{
+    position:relative;
+    float:right;
+    right:20px;
+    top: 50px;
+	color:white;
+	background-color:red;
+    cursor:pointer;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px #2B4D9D;
+}
+
+#add{
+	position:relative;
+    float:right;
+    right:20px;
+    top:119px;
+    text-align: center;
+    border-radius: 5px;
+	z-index:1;   
+    box-shadow: 0 2px #2B4D9D;
+}
+#chhn1{
+    position:relative;
+    left:26px;
+    top:10px;
+    text-align: center;
+    border-radius: 5px;
+	z-index:1;
+    box-shadow: 0 2px #2B4D9D;
+}
+#chhn2{
+    position:relative;
+    left:50px;
+    top:10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px #2B4D9D;
+	z-index:1;
+}
+#grnd{
+    position:relative;
+    left:80px;
+    top:10px;
+    text-align: center;
+    border-radius: 5px;
+	z-index:1;
+    box-shadow: 0 2px #2B4D9D;
+}
+#dual{
+    position:relative;
+    left:106px;
+    top:10px;
+    text-align: center;
+    border-radius: 5px;
+	z-index:1;
+    box-shadow: 0 2px #2B4D9D;
+}
+/*----------------------------------    knob on right side   -----------------------------*/
+#knob-container{
+    /* position: absolute;
+       top:2%;*/
+}
+#frequency-knob-container {
+    /*border: 1px solid red;
+    margin-bottom: 20px;*/
+    position:absolute;
+    top:10px;
+    float: left;
+    left:260px;
+    width: 100px;
+    height: 110px;
+    padding: 5px;
+    /*background-color: orange;*/
+    text-align: center;
+    cursor:pointer;
+}
+#frequency-knob-container label,#amplitude-knob-container label{
+    font-style: italic;
+}
+/*-------------------------------------    knob for amplitude   ------------------------------*/
+#knob-container-amp{
+    /* position: absolute;
+       top:2%;*/
+}
+#amplitude-knob-container1 {
+    /*border: 1px solid red;
+    //margin-bottom: 20px;
+    background-color: grey; */
+    position:relative;
+	left:101px;
+	float:left;
+    top:27px;
+    width: 100px;
+    height: 110px;
+    padding: 5px;
+   
+    text-align: center;
+    cursor:pointer;
+}
+#amplitude-knob-container2 {
+    /* border: 1px solid red;
+    // margin-bottom: 20px;
+     // background-color: grey;*/
+    position:relative;
+    top:27px;
+    float:left;
+    left:229px;
+    width: 100px;
+    height: 110px;
+    padding: 5px;   
+    text-align: center;
+    cursor:pointer;
+}
+#amplitude-knob-container1 label,#amplitude-knob-container2 label{
+    font-style: italic;
+}
+
+/*************************    knob for function Generator   **********************************/
+#knob-container-fng{
+    /* position: absolute;
+       top:2%;*/
+}
+#frequency-knob-container-fng {
+    
+    position:relative;
+    float: left;
+    left:20px;
+    top:25px;
+    width: 100px;
+    height: 110px;
+    padding: 5px;
+    text-align: center;
+    cursor:pointer;
+}
+#amplitude-knob-container-fng {
+    
+    position:relative;
+    float:right;
+    right:60px;
+    top:25px;
+    width: 100px;
+    height: 110px;
+    padding: 5px;
+    text-align: center;
+    cursor:pointer;
+}
+#frequency-knob-container-fng label,#amplitude-knob-container-fng label{
+    font-style: italic;
+}
+/*---------------------------vertical range slider-------------------------*/
+input[type=range][orient=vertical]
+{
+    
+}
+
+#positiony1{
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 120px;
+    padding: 0 5px;
+    position:relative;
+    top:10px;
+    float:right;
+    right:408px;
+
+}
+#positnlabely1{
+    position:relative;
+    top:140px;
+    float:right;
+    right:366px;
+}
+#positnlabelch1{
+    position:relative;
+    top:140px;
+    float:right;
+    right:175px;
+}
+#positiony2{
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 120px;
+    padding: 0 5px;
+    position:relative;
+    top:10px;
+    float:left;
+    left:49px;
+}
+#positnlabely2{
+    position:relative;
+    top:140px;
+    float:left;
+    left:13px;
+}
+#positnlabelch2{
+    position:relative;
+    top:120px;  
+    float:left;
+    left:126px;
+}
+#positionx{
+    position:relative;
+    top:50px;
+    left:-50px;
+}
+#positnlabelx{
+    position:relative;
+    top:90px;
+    float:left;
+    left:50px;
+}
+#resistor{
+   -webkit-appearance: slider-vertical; /* WebKit */
+ position:absolute;
+ right:150px;
+ top:170px;
+ height:90px;
+ cursor:pointer;
+}
+#restr{
+    position:absolute;
+    width:70px;
+    top:110px;
+    right:150px;
+}
+#resohm{
+   position:relative;
+
+    top:100px;
+     float:right; 
+     right:100px;
+}
+#r{
+    position:absolute;
+
+    top:210px;
+    right:180px;
+     
+}
+            
+    #controller {
+    position: absolute;
+    border: 2px solid #19318F;
+    top: 605px;
+    width: 457px;
+    height: 311px;
+    left: 16px;
+}
+
+#cntrlr
+{
+    position:absolute; 
+    background-color:#19318F;   
+    height:25px; top:0px; 
+    right:-1px; 
+    width:460px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+    #grpwrap{position: absolute;
+    border: 2px solid #19318F;
+    top: 80px;
+    width: 457px;
+    height: 510px;
+    left: 16px;
+}
+  #osci
+  {
+    position:absolute; 
+    font-size:20px; 
+    top:-1px;left:0px;  
+    height:25px;background-color:#19318F;  
+    width:459px;font-weight: bold;text-align: center;
+  }          
+            
+.main-footer
+	{
+		position:absolute;
+		width: 83.5em;
+		height:25px;
+		background-image: linear-gradient(#2B4D9D,#091069 );
+	  top:58.8em;left: 0.3;
+	  text-align: center;display:grid;
+	}
