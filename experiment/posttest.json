@@ -1,39 +1,7 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+[{"question":"If a light travels in a certain medium and it gets reflected off an optically denser medium with high refractive index, then it is regarded as _________.","answers":{"a":"Internal Reflection","b":"External Reflection","c":"Both a and b","d":"None of the above"},"correctAnswer":"b"},
+{"question":"What is the typical value of refractive index for an ethyl alcohol?","answers":{"a":1.36,"b":1,"c":1.33,"d":0},"correctAnswer":"a"},
+{"question":"Which type of photonic crystal fiber exhibit/s its/their similarity to the periodic crystalline lattice in a semiconductor?","answers":{"a":"Index guiding fiber","b":"Photonic bandgap fiber","c":"Both a and b","d":"None of the above"},"correctAnswer":"b"},
+{"question":"Which type of fiber optic cable has/have its/their core with the size of about 480 μm to 980 μm & made up of polymethylmethacrylate (PMMA)?","answers":{"a":"Glass fiber optic cable","b":"Plastic fiber optic cable","c":"Plastic clad silica fiber optic cable","d":"All the above"},"correctAnswer":"b"},
+{"question":"In multifiber cable system, which form of outer jacket/s consist/s of polyolefin compounds and are regarded as halogen free?","answers":{"a":"All the below","b":"OFNP","c":"OFNR","d":"LSZH"},"correctAnswer":"d"}]
+
+

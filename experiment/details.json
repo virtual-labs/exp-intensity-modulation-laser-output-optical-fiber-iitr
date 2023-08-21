@@ -1,0 +1,47 @@
+{
+
+   "details": [
+       {
+			"Experiment": "Intensity Modulation of Laser Output through an Optical Fiber.",     
+			"Lab": "Optical Communications Lab",               
+			"Discipline": "Electronics and Communication Engineering",				 
+			"Technology": "HTML, JavaScript, CSS"         
+       }
+   ],
+
+   "developer": [
+       {       
+      "Developer": "Prof. RS Anand",         
+      "Institute": "Indian Institute of Technology Roorkee, Roorkee",         
+      "InstituteAcronym": "IITR"   
+       }
+   ],
+
+   "contributer": [
+       
+       {       
+			"Contributer": "Rajeev Kumar",              
+      "Institute": "Indian Institute of Technology Roorkee, Roorkee",               
+			"InstituteAcronym": "IITR"         
+       },
+
+       {       
+			"Contributer": "Nipun Jain",             
+      "Institute": "Indian Institute of Technology Roorkee, Roorkee",               
+			"InstituteAcronym": "IITR"         
+       },
+
+       {       
+			"Contributer": "Piyush Rawat",             
+      "Institute": "Indian Institute of Technology Roorkee, Roorkee",               
+			"InstituteAcronym": "IITR"         
+       },
+
+       {       
+      "Contributer": "Pragya Daksh",             
+      "Institute": "Indian Institute of Technology Roorkee, Roorkee",               
+      "InstituteAcronym": "IITR"         
+       }
+   ]
+
+}
