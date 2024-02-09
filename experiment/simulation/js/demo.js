@@ -1,3 +1,4 @@
+var Point=[];
 ;
 (function () {
     
@@ -89,6 +90,11 @@
 			document.getElementById("check").remove();
 			document.getElementById("start").disabled=false;
 			document.getElementById("start").style.cursor='pointer';
+            for(i=0;i<Point.length;i++)
+            {
+             Point[i].setEnabled(false);
+            }
+         
 			return true;
 		 }
     }
@@ -202,22 +208,22 @@
             };
 
             
-			instance.addEndpoint("dragDropWindow1", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint2);
-            instance.addEndpoint("dragDropWindow2", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint2);
-            instance.addEndpoint("dragDropWindow3", { anchor: [0.75,0 , 0, -1] }, exampleEndpoint3);
-            instance.addEndpoint("dragDropWindow4", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3);
-            instance.addEndpoint("dragDropWindow5", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint4);
-            instance.addEndpoint("dragDropWindow6", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint4);
-			instance.addEndpoint("dragDropWindow7", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow8", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow9", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow10", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow11", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3);
-			instance.addEndpoint("dragDropWindow12", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3);
-			instance.addEndpoint("dragDropWindow13", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow14", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5);
-			instance.addEndpoint("dragDropWindow15", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3);
-			instance.addEndpoint("dragDropWindow16", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3);
+			Point.push(instance.addEndpoint("dragDropWindow1", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint2));
+            Point.push(instance.addEndpoint("dragDropWindow2", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint2));
+            Point.push(instance.addEndpoint("dragDropWindow3", { anchor: [0.75,0 , 0, -1] }, exampleEndpoint3));
+            Point.push(instance.addEndpoint("dragDropWindow4", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3));
+            Point.push(instance.addEndpoint("dragDropWindow5", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint4));
+            Point.push(instance.addEndpoint("dragDropWindow6", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint4));
+			Point.push(instance.addEndpoint("dragDropWindow7", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow8", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow9", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow10", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow11", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3));
+			Point.push(instance.addEndpoint("dragDropWindow12", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3));
+			Point.push(instance.addEndpoint("dragDropWindow13", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow14", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint5));
+			Point.push(instance.addEndpoint("dragDropWindow15", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3));
+			Point.push(instance.addEndpoint("dragDropWindow16", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint3));
 			
             instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
 
