@@ -5,7 +5,7 @@
 <b>Discipline | <b> Electronics and Communication Engineering
 :--|:--|
 <b> Lab | <b> Optical Communication
-<b> Experiment|     <b> 3. Intensity modulation of laser output through an optical fiber.
+<b> Experiment|     <b> 3. Intensity modulation of laser output through an Optical Fiber.
 
 <h5> About the Experiment : </h5> <br>
 
